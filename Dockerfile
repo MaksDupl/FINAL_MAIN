@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Собираем бинарник
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main .
+RUN CGO_ENABLED=0 go build -o ./${APP_NAME}
 
 # Финальный образ
 FROM alpine:latest
